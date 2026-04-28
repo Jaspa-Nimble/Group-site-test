@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Shop - Products</title>
+
+  
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">My Shop</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="products.html">Products</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+          <a href="cart.html" id="cart-count" class="cart-badge">Cart: 0</a>
+          <button class="btn btn-sm btn-light ms-2" onclick="toggleTheme()">Dark Mode</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="page-title text-center">Our Products</h1>
+    <p class="page-subtitle text-center">Browse our collection below.</p>
+
+    <div id="cart-message">Item added to cart!</div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Gallon of Gas</h3>
+            <p><img src="./Pictures/Gas.jpg" alt="A red and yellow container that has a yellow funnel"></p>
+            <div class="price">$8.99</div>
+            <button class="cart-btn" onclick="addToCart('Gallon of Gas')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Bucket of Tadpoles</h3>
+            <p><img src="./Pictures/Bucket_of_Tadpole_JE1_BE1.png" alt="A bucket filled with a dark green water with a looks to be a tadpole poking its head out of the water."></p>
+            <div class="price">$39.99</div>
+            <button class="cart-btn" onclick="addToCart('Bucket of Tadpoles')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Piece of the Artemis II</h3>
+            <p><img src="Pictures/Artemis II.webp" alt="The NASA offical Artemis 2 logo, which has a red line coming from the backgound where the Earth is to the foreground to where the moon is."></p>
+            <div class="price">$2999.99</div>
+            <button class="cart-btn" onclick="addToCart('Piece of the Artimis II')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Coffee beans of some sort</h3>
+            <p><img src="Pictures/Coffee.jpg" alt="A pile of roasted coffee beans looks to be a lighter roast."></p>
+            <div class="price">$22.00</div>
+            <button class="cart-btn" onclick="addToCart('Coffee beans of some sort')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Enchanted Diamond Pickaxe</h3>
+            <p><img src="Pictures/Enchanted_Diamond_Pickaxe.gif" alt="A GIF of a blue pickaxe with a purple haze fading over it."></p>
+            <div class="price">$799.99</div>
+            <button class="cart-btn" onclick="addToCart('Diamond Pickaxe')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="card product-card p-3 text-center">
+          <div class="card-body">
+            <h3>Farmers Almanac</h3>
+            <p><img src="Pictures/Almanac.jpg" alt="Yellow book that says The Farmers Guide Almanac 2026-2027"></p>
+            <div class="price">$14.99</div>
+            <button class="cart-btn" onclick="addToCart('Farmers Almanac')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 mt-4">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <div class="mt-3">
+      <p class="mb-0">2026 My Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
