@@ -14,24 +14,35 @@
 <body>
 
   <nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">My Shop</a>
-      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="container">
+    <a class="navbar-brand" href="index.html">My Shop</a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <div class="navbar-nav ms-auto align-items-center">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link" href="products.html">Products</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-          <a href="cart.html" id="cart-count" class="cart-badge">Cart: 0</a>
-          <button class="btn btn-sm btn-light ms-2" onclick="toggleTheme()">Dark Mode</button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <div class="navbar-nav ms-auto align-items-center">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="products.html">Products</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a href="cart.html" id="cart-count" class="cart-badge">Cart: 0</a>
+        
+        <div class="dropdown ms-3">
+          <button class="btn btn-sm btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Themes
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li><button class="dropdown-item" onclick="setTheme('light')">Default Light</button></li>
+            <li><button class="dropdown-item" onclick="setTheme('dark')">Midnight Dark</button></li>
+            <li><button class="dropdown-item" onclick="setTheme('sunset')">Warm Sunset</button></li>
+            <li><button class="dropdown-item" onclick="setTheme('crazy')">⚠️ Neon Crazy</button></li>
+          </ul>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <div class="container py-5">
     <h1 class="page-title text-center mb-2">Shopping Cart</h1>
@@ -80,17 +91,7 @@
     </div>
   </div>
 
-  <div class="dropdown d-inline-block ms-2">
-  <button class="btn btn-sm btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Theme Selection
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end">
-    <li><button class="dropdown-item" onclick="setTheme('light')">Default Light</button></li>
-    <li><button class="dropdown-item" onclick="setTheme('dark')">Midnight Dark</button></li>
-    <li><button class="dropdown-item" onclick="setTheme('sunset')">Warm Sunset</button></li>
-    <li><button class="dropdown-item" onclick="setTheme('crazy')">⚠️ Neon Crazy</button></li>
-  </ul>
-</div>
+
 
   <footer class="text-center py-4 mt-4">
     <a href="index.html">Home</a>

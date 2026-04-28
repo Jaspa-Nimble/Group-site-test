@@ -295,18 +295,18 @@ function updateShipping() {
 }
 
 function setTheme(themeName) {
-  // Apply the theme to the body tag using a data attribute
+  // 1. Set the data attribute for CSS selectors
   document.body.setAttribute('data-theme', themeName);
   
-  // Save to local storage so it persists on refresh
-  localStorage.setItem("selectedTheme", themeName);
-
-  // Special case for Dark Mode compatibility with your existing CSS
+  // 2. Maintain compatibility with your existing .dark-theme CSS classes
   if (themeName === 'dark') {
     document.body.classList.add("dark-theme");
   } else {
     document.body.classList.remove("dark-theme");
   }
+
+  // 3. Save to local storage
+  localStorage.setItem("selectedTheme", themeName);
 }
 
 function loadTheme() {

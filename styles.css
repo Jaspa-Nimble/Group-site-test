@@ -470,53 +470,54 @@ img {
   color: #ffffff !important;
 }
 
+/* --- THEME SYSTEM OVERRIDES --- */
+
+/* 1. Sunset Theme */
 [data-theme="sunset"] {
-  --bg: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  --bg: linear-gradient(to bottom right, #ff9a9e, #fad0c4) !important;
   --nav: #6e4545;
   --card-bg: #fff5f5;
-  --card-border: #ffb3b3;
-  --btn: #d46a6a;
-  --btn-hover: #6e4545;
   --text-dark: #4a2c2c;
-  --text-body: #5a3d3d;
+  background: var(--bg) !important;
 }
 
-/* 2. NEON CRAZY THEME */
+/* 2. Neon Crazy Theme */
 [data-theme="crazy"] {
-  --bg: repeating-radial-gradient(circle, #ff00ff, #00ffff 10%, #ffff00 20%);
-  --nav: #000000;
-  --nav-hover: #00ff00;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-border: #ff00ff;
-  --btn: #ff00ff;
-  --btn-hover: #00ffff;
-  --text-dark: #ff0000;
-  --text-body: #0000ff;
-  --shadow: 10px 10px 0px #00ff00;
+  --bg: repeating-radial-gradient(circle, #ff00ff, #00ffff 5%, #ffff00 10%) !important;
+  background: var(--bg) !important;
+  color: #000 !important;
 }
-/* Make crazy theme text shake slightly */
+
 [data-theme="crazy"] .page-title {
-  animation: shake 0.5s infinite;
+  animation: shake 0.2s infinite;
   color: #ff00ff !important;
   text-shadow: 3px 3px #00ffff;
+  font-weight: 900;
 }
 
+[data-theme="crazy"] .card, 
+[data-theme="crazy"] .hero-box,
+[data-theme="crazy"] .form-box {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 5px dashed #ff00ff !important;
+  transform: rotate(1deg);
+}
+
+/* Shake Animation for Crazy Mode */
 @keyframes shake {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(1deg); }
-  75% { transform: rotate(-1deg); }
-  100% { transform: rotate(0deg); }
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  50% { transform: translate(-3px, 0px) rotate(1deg); }
+  100% { transform: translate(1px, 1px) rotate(0deg); }
 }
 
-/* 3. Dark Theme (Modified to use data-theme) */
-[data-theme="dark"] {
-  --bg: linear-gradient(to bottom right, #000000, #0c1821);
-  --nav: #0c1821;
-  --nav-hover: #ccc9dc;
-  --btn: #324a5f;
-  --btn-hover: #1b2a41;
-  --text-dark: #ccc9dc;
-  --text-body: #ccc9dc;
-  --card-bg: #1b2a41;
-  --card-border: #324a5f;
+/* Navbar Button Styling */
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: var(--nav) !important;
 }
