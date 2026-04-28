@@ -471,37 +471,6 @@ img {
 }
 
 
-/* 1. Sunset Theme */
-[data-theme="sunset"] {
-  --bg: linear-gradient(to bottom right, #ff9a9e, #fad0c4) !important;
-  --nav: #6e4545;
-  --card-bg: #fff5f5;
-  --text-dark: #4a2c2c;
-  background: var(--bg) !important;
-}
-
-/* 2. Neon Crazy Theme */
-[data-theme="crazy"] {
-  --bg: repeating-radial-gradient(circle, #ff00ff, #00ffff 5%, #ffff00 10%) !important;
-  background: var(--bg) !important;
-  color: #000 !important;
-}
-
-[data-theme="crazy"] .page-title {
-  animation: shake 0.2s infinite;
-  color: #ff00ff !important;
-  text-shadow: 3px 3px #00ffff;
-  font-weight: 900;
-}
-
-[data-theme="crazy"] .card, 
-[data-theme="crazy"] .hero-box,
-[data-theme="crazy"] .form-box {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 5px dashed #ff00ff !important;
-  transform: rotate(1deg);
-}
-
 /* Shake Animation for Crazy Mode */
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -547,33 +516,68 @@ footer a {
 }
 
 /* --- THEME OVERRIDES --- */
-[data-theme="dark"] .custom-navbar .nav-link,
-[data-theme="sunset"] .custom-navbar .nav-link {
-    color: #ffffff !important;
+:root {
+  --bg: linear-gradient(to bottom right, #cde6f5, #8da7be);
+  --nav: #554640;
+  --btn-bg: #707078;
+  --btn-text: #ffffff;
+  --footer-text: #554640;
+  --footer-link: #554640;
 }
 
-[data-theme="crazy"] .custom-navbar {
-    background: #000 !important;
+/* 2. Midnight Dark */
+[data-theme="dark"] {
+  --bg: linear-gradient(to bottom right, #000000, #0c1821) !important;
+  --nav: #0c1821;
+  --btn-bg: #324a5f;
+  --btn-text: #ccc9dc;
+  --footer-text: #ccc9dc;
+  --footer-link: #8da7be;
+  background: var(--bg) !important;
 }
 
-.custom-navbar .navbar-brand {
-    color: #ffffff !important;
-    font-weight: 800;
-    text-transform: uppercase;
+/* 3. Warm Sunset */
+[data-theme="sunset"] {
+  --bg: linear-gradient(to bottom right, #ff9a9e, #fad0c4) !important;
+  --nav: #6e4545;
+  --btn-bg: #d46a6a;
+  --btn-text: #ffffff;
+  --footer-text: #4a2c2c;
+  --footer-link: #6e4545;
+  background: var(--bg) !important;
 }
 
-/* Ensure it changes color on hover for feedback */
-.custom-navbar .navbar-brand:hover {
-    color: #8da7be !important;
+/* 4. Neon Crazy */
+[data-theme="crazy"] {
+  --bg: repeating-radial-gradient(circle, #ff00ff, #00ffff 5%, #ffff00 10%) !important;
+  --nav: #000000;
+  --btn-bg: #00ff00;
+  --btn-text: #000000;
+  --footer-text: #ffff00;
+  --footer-link: #ff00ff;
+  background: var(--bg) !important;
 }
 
-/* Crazy Theme brand color */
-[data-theme="crazy"] .navbar-brand {
-    color: #00ffff !important; /* Cyan for neon contrast */
-    text-shadow: 2px 2px #ff00ff;
+.shop-btn, .cart-btn, .send-btn, .clear-cart-btn {
+    background-color: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Dark Theme brand color */
-[data-theme="dark"] .navbar-brand {
-    color: #ffffff !important;
+/* This fixes the Footer links so they don't stay brown in other themes */
+footer {
+    background-color: var(--nav) !important; 
+    color: var(--footer-text) !important;
+}
+
+footer a {
+    color: var(--footer-link) !important;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* This ensures the My Shop logo and nav links stay visible */
+.custom-navbar .navbar-brand, 
+.custom-navbar .nav-link {
+    color: #ffffff !important; 
 }
