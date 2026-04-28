@@ -521,8 +521,8 @@ footer a {
   --nav: #554640;
   --btn-bg: #707078;
   --btn-text: #ffffff;
-  --footer-text: #554640;
-  --footer-link: #554640;
+  --footer-text: #ffffff;
+  --footer-link: #ffffff;
 }
 
 /* 2. Midnight Dark */
@@ -540,10 +540,10 @@ footer a {
 [data-theme="sunset"] {
   --bg: linear-gradient(to bottom right, #ff9a9e, #fad0c4) !important;
   --nav: #6e4545;
-  --btn-bg: #d46a6a;
-  --btn-text: #ffffff;
-  --footer-text: #4a2c2c;
-  --footer-link: #6e4545;
+  --btn-bg: #ffffff;
+  --btn-text: #000000;
+  --footer-text: #ffffff;
+  --footer-link: #ffffff;
   background: var(--bg) !important;
 }
 
