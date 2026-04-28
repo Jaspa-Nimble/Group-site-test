@@ -294,19 +294,22 @@ function updateShipping() {
   document.getElementById("cart-total").textContent = "$" + total.toFixed(2);
 }
 
-function toggleTheme() {
-  document.body.classList.toggle("dark-theme");
+function setTheme(themeName) {
+  // Apply the theme to the body tag using a data attribute
+  document.body.setAttribute('data-theme', themeName);
+  
+  // Save to local storage so it persists on refresh
+  localStorage.setItem("selectedTheme", themeName);
 
-  if (document.body.classList.contains("dark-theme")) {
-    localStorage.setItem("theme", "dark");
+  // Special case for Dark Mode compatibility with your existing CSS
+  if (themeName === 'dark') {
+    document.body.classList.add("dark-theme");
   } else {
-    localStorage.setItem("theme", "light");
+    document.body.classList.remove("dark-theme");
   }
 }
 
 function loadTheme() {
-  const theme = localStorage.getItem("theme");
-  if (theme === "dark") {
-    document.body.classList.add("dark-theme");
-  }
+  const savedTheme = localStorage.getItem("selectedTheme") || "light";
+  setTheme(savedTheme);
 }
