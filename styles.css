@@ -555,3 +555,25 @@ footer a {
 [data-theme="crazy"] .custom-navbar {
     background: #000 !important;
 }
+
+.custom-navbar .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Ensure it changes color on hover for feedback */
+.custom-navbar .navbar-brand:hover {
+    color: #8da7be !important;
+}
+
+/* Crazy Theme brand color */
+[data-theme="crazy"] .navbar-brand {
+    color: #00ffff !important; /* Cyan for neon contrast */
+    text-shadow: 2px 2px #ff00ff;
+}
+
+/* Dark Theme brand color */
+[data-theme="dark"] .navbar-brand {
+    color: #ffffff !important;
+}
