@@ -295,20 +295,29 @@ function updateShipping() {
 }
 
 function setTheme(themeName) {
-  // 1. Set the data attribute for CSS selectors
+  // Apply the theme to the body tag
   document.body.setAttribute('data-theme', themeName);
   
-  // 2. Maintain compatibility with your existing .dark-theme CSS classes
+  // Update the theme button text or style if needed
+  const themeBtn = document.getElementById('theme-dropdown-btn');
+  if (themeBtn && themeName === 'crazy') {
+      themeBtn.innerText = "Crazy Mode!";
+  } else if (themeBtn) {
+      themeBtn.innerText = "Themes";
+  }
+
+  // Handle existing Dark Mode class logic
   if (themeName === 'dark') {
     document.body.classList.add("dark-theme");
   } else {
     document.body.classList.remove("dark-theme");
   }
 
-  // 3. Save to local storage
+  // Save selection
   localStorage.setItem("selectedTheme", themeName);
 }
 
+// This function runs on every page load
 function loadTheme() {
   const savedTheme = localStorage.getItem("selectedTheme") || "light";
   setTheme(savedTheme);

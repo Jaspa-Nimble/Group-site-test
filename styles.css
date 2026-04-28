@@ -470,7 +470,6 @@ img {
   color: #ffffff !important;
 }
 
-/* --- THEME SYSTEM OVERRIDES --- */
 
 /* 1. Sunset Theme */
 [data-theme="sunset"] {
@@ -520,4 +519,39 @@ img {
 .btn-outline-light:hover {
   background-color: white;
   color: var(--nav) !important;
+}
+
+.custom-navbar .nav-link {
+    color: #ffffff !important; /* Forces text to white */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover, 
+.custom-navbar .nav-link.active-link {
+    color: #8da7be !important; /* Uses your theme's light blue for hover/active */
+    opacity: 1;
+}
+
+/* Specific button style for the theme selector to ensure it's visible */
+.btn-theme-toggle {
+    background-color: #8da7be !important;
+    color: #554640 !important;
+    border: none !important;
+    font-weight: bold;
+}
+
+/* Ensure footer links don't vanish either */
+footer a {
+    color: #554640 !important;
+}
+
+/* --- THEME OVERRIDES --- */
+[data-theme="dark"] .custom-navbar .nav-link,
+[data-theme="sunset"] .custom-navbar .nav-link {
+    color: #ffffff !important;
+}
+
+[data-theme="crazy"] .custom-navbar {
+    background: #000 !important;
 }
